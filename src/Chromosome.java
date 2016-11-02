@@ -7,7 +7,7 @@ public class Chromosome {
 	
 	public Chromosome(int degree){
 		for(int i = 0; i < degree+1; i++){
-			float randomCoeff = (float) (Math.random() * (10 - (-10)) + (-10));
+			float randomCoeff = (float) (Math.random() * (10.0 - (-10.0)) + (-10.0));
 			genes.add(randomCoeff);
 		}
 	}
@@ -45,7 +45,8 @@ public class Chromosome {
 			}
 			error += Math.pow((ycalc-current.y), 2);
 		}
-		fitness = 1/((1/curve.getPointsNum())*error);
+		error /= (float)curve.getPointsNum();
+		fitness = 1/error;
 	}
 	
 	public void mutate(int currentGen, int maxGen){

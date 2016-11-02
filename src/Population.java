@@ -6,9 +6,9 @@ public class Population {
 	private int populationSize;
 	Curve curve;
 	
-	public Population(int populationSize) {
+	public Population(int populationSize,String filename) {
 		super();
-		curve = new Curve("curve1.txt");
+		curve = new Curve(filename);
 		this.populationSize = populationSize;
 		init();
 	}
